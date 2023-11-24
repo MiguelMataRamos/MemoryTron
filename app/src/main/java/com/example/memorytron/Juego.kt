@@ -48,7 +48,7 @@ class Juego : AppCompatActivity() {
 
 
     private var primero = true
-    private var esperando = false
+    private var vidas = 3
     private var carta1: Drawable? = null
     private var carta2: Drawable? = null
     private var vista1: ImageView? = null
@@ -61,6 +61,14 @@ class Juego : AppCompatActivity() {
         return false
     }
 
+    fun vidaMenos(){
+        when(vidas){
+            3 -> bind.cora3.setImageResource(R.drawable.cora_vacio)
+            2 -> bind.cora2.setImageResource(R.drawable.cora_vacio)
+            1 -> bind.cora1.setImageResource(R.drawable.cora_vacio)
+        }
+        vidas --
+    }
     private fun mostrar(i: ImageView?, r: Int) {
         i?.setImageResource(cartas[r])
         volteada[r] = true
@@ -97,6 +105,7 @@ class Juego : AppCompatActivity() {
                                 ocultar(vista1, indice1)
                                 ocultar(vista2, indice2)
                                 primero = true
+                                vidaMenos()
                                 semaphore.release()
                             }, 1000)
 
@@ -128,6 +137,7 @@ class Juego : AppCompatActivity() {
                                 ocultar(vista1, indice1)
                                 ocultar(vista2, indice2)
                                 primero = true
+                                vidaMenos()
                                 semaphore.release()
                             }, 1000)
 
@@ -160,6 +170,7 @@ class Juego : AppCompatActivity() {
                                 ocultar(vista1, indice1)
                                 ocultar(vista2, indice2)
                                 primero = true
+                                vidaMenos()
                                 semaphore.release()
                             }, 1000)
 
@@ -191,6 +202,7 @@ class Juego : AppCompatActivity() {
                                 ocultar(vista1, indice1)
                                 ocultar(vista2, indice2)
                                 primero = true
+                                vidaMenos()
                                 semaphore.release()
                             }, 1000)
 
@@ -209,6 +221,7 @@ class Juego : AppCompatActivity() {
                             carta1 = cartas[indice1].toDrawable()
                             mostrar(vista1, indice1)
                             primero = false
+                            semaphore.release()
 
                         } else {
                             vista2 = bind.c5
@@ -221,6 +234,8 @@ class Juego : AppCompatActivity() {
                                 ocultar(vista1, indice1)
                                 ocultar(vista2, indice2)
                                 primero = true
+                                vidaMenos()
+                                semaphore.release()
                             }, 1000)
 
                         }
@@ -237,6 +252,7 @@ class Juego : AppCompatActivity() {
                             carta1 = cartas[indice1].toDrawable()
                             mostrar(vista1, indice1)
                             primero = false
+                            semaphore.release()
 
                         } else {
                             vista2 = bind.c6
@@ -249,6 +265,8 @@ class Juego : AppCompatActivity() {
                                 ocultar(vista1, indice1)
                                 ocultar(vista2, indice2)
                                 primero = true
+                                vidaMenos()
+                                semaphore.release()
                             }, 1000)
 
                         }
@@ -265,6 +283,7 @@ class Juego : AppCompatActivity() {
                             carta1 = cartas[indice1].toDrawable()
                             mostrar(vista1, indice1)
                             primero = false
+                            semaphore.release()
 
                         } else {
                             vista2 = bind.c7
@@ -277,6 +296,8 @@ class Juego : AppCompatActivity() {
                                 ocultar(vista1, indice1)
                                 ocultar(vista2, indice2)
                                 primero = true
+                                vidaMenos()
+                                semaphore.release()
                             }, 1000)
 
                         }
@@ -293,6 +314,7 @@ class Juego : AppCompatActivity() {
                             carta1 = cartas[indice1].toDrawable()
                             mostrar(vista1, indice1)
                             primero = false
+                            semaphore.release()
 
                         } else {
                             vista2 = bind.c8
@@ -305,6 +327,8 @@ class Juego : AppCompatActivity() {
                                 ocultar(vista1, indice1)
                                 ocultar(vista2, indice2)
                                 primero = true
+                                vidaMenos()
+                                semaphore.release()
                             }, 1000)
 
                         }
@@ -321,6 +345,7 @@ class Juego : AppCompatActivity() {
                             carta1 = cartas[indice1].toDrawable()
                             mostrar(vista1, indice1)
                             primero = false
+                            semaphore.release()
 
                         } else {
                             vista2 = bind.c9
@@ -333,6 +358,8 @@ class Juego : AppCompatActivity() {
                                 ocultar(vista1, indice1)
                                 ocultar(vista2, indice2)
                                 primero = true
+                                vidaMenos()
+                                semaphore.release()
                             }, 1000)
 
                         }
@@ -349,6 +376,7 @@ class Juego : AppCompatActivity() {
                             carta1 = cartas[indice1].toDrawable()
                             mostrar(vista1, indice1)
                             primero = false
+                            semaphore.release()
 
                         } else {
                             vista2 = bind.c10
@@ -361,6 +389,8 @@ class Juego : AppCompatActivity() {
                                 ocultar(vista1, indice1)
                                 ocultar(vista2, indice2)
                                 primero = true
+                                vidaMenos()
+                                semaphore.release()
                             }, 1000)
 
                         }
@@ -377,6 +407,7 @@ class Juego : AppCompatActivity() {
                             carta1 = cartas[indice1].toDrawable()
                             mostrar(vista1, indice1)
                             primero = false
+                            semaphore.release()
 
                         } else {
                             vista2 = bind.c11
@@ -389,6 +420,8 @@ class Juego : AppCompatActivity() {
                                 ocultar(vista1, indice1)
                                 ocultar(vista2, indice2)
                                 primero = true
+                                vidaMenos()
+                                semaphore.release()
                             }, 1000)
 
                         }
@@ -405,6 +438,7 @@ class Juego : AppCompatActivity() {
                             carta1 = cartas[indice1].toDrawable()
                             mostrar(vista1, indice1)
                             primero = false
+                            semaphore.release()
 
                         } else {
                             vista2 = bind.c12
@@ -417,6 +451,8 @@ class Juego : AppCompatActivity() {
                                 ocultar(vista1, indice1)
                                 ocultar(vista2, indice2)
                                 primero = true
+                                vidaMenos()
+                                semaphore.release()
                             }, 1000)
 
                         }

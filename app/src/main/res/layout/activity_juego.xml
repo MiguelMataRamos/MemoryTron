@@ -6,6 +6,55 @@
     android:layout_height="match_parent"
     tools:context=".Juego">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/fila1">
+
+        <ImageView
+            android:id="@+id/cora1"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/cora"
+            android:adjustViewBounds="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/cora2"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_margin="10dp"
+            />
+
+        <ImageView
+            android:id="@+id/cora2"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/cora"
+            android:adjustViewBounds="true"
+            app:layout_constraintStart_toEndOf="@+id/cora1"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/cora3"
+            android:layout_margin="10dp"
+            />
+
+        <ImageView
+            android:id="@+id/cora3"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/cora"
+            android:adjustViewBounds="true"
+            app:layout_constraintStart_toEndOf="@+id/cora2"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_margin="10dp"
+            />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
     <LinearLayout
         android:id="@+id/fila1"
         android:layout_width="match_parent"
