@@ -32,7 +32,8 @@
             android:layout_margin="5dp"
             android:layout_weight="1"
             android:adjustViewBounds="true"
-            android:src="@drawable/trasera" />
+            android:src="@drawable/trasera"
+            android:onClick="click"/>
 
         <ImageView
             android:id="@+id/c3"
@@ -41,7 +42,8 @@
             android:layout_margin="5dp"
             android:layout_weight="1"
             android:adjustViewBounds="true"
-            android:src="@drawable/trasera" />
+            android:src="@drawable/trasera"
+            android:onClick="click"/>
 
         <ImageView
             android:id="@+id/c4"
@@ -50,7 +52,8 @@
             android:layout_margin="5dp"
             android:layout_weight="1"
             android:adjustViewBounds="true"
-            android:src="@drawable/trasera" />
+            android:src="@drawable/trasera"
+            android:onClick="click"/>
 
     </LinearLayout>
 
@@ -60,7 +63,8 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        >
 
         <ImageView
             android:id="@+id/c9"
@@ -69,7 +73,8 @@
             android:layout_margin="5dp"
             android:layout_weight="1"
             android:adjustViewBounds="true"
-            android:src="@drawable/trasera" />
+            android:src="@drawable/trasera"
+            android:onClick="click"/>
 
         <ImageView
             android:id="@+id/c10"
@@ -78,7 +83,8 @@
             android:layout_margin="5dp"
             android:layout_weight="1"
             android:adjustViewBounds="true"
-            android:src="@drawable/trasera" />
+            android:src="@drawable/trasera"
+            android:onClick="click"/>
 
         <ImageView
             android:id="@+id/c11"
@@ -87,7 +93,8 @@
             android:layout_margin="5dp"
             android:layout_weight="1"
             android:adjustViewBounds="true"
-            android:src="@drawable/trasera" />
+            android:src="@drawable/trasera"
+            android:onClick="click"/>
 
         <ImageView
             android:id="@+id/c12"
@@ -96,7 +103,8 @@
             android:layout_margin="5dp"
             android:layout_weight="1"
             android:adjustViewBounds="true"
-            android:src="@drawable/trasera" />
+            android:src="@drawable/trasera"
+            android:onClick="click"/>
 
     </LinearLayout>
 
@@ -114,7 +122,8 @@
             android:layout_margin="5dp"
             android:layout_weight="1"
             android:adjustViewBounds="true"
-            android:src="@drawable/trasera" />
+            android:src="@drawable/trasera"
+            android:onClick="click"/>
 
         <ImageView
             android:id="@+id/c6"
@@ -123,7 +132,8 @@
             android:layout_margin="5dp"
             android:layout_weight="1"
             android:adjustViewBounds="true"
-            android:src="@drawable/trasera" />
+            android:src="@drawable/trasera"
+            android:onClick="click"/>
 
         <ImageView
             android:id="@+id/c7"
@@ -132,7 +142,9 @@
             android:layout_margin="5dp"
             android:layout_weight="1"
             android:adjustViewBounds="true"
-            android:src="@drawable/trasera" />
+            android:src="@drawable/trasera"
+            android:onClick="click"
+            />
 
         <ImageView
             android:id="@+id/c8"
@@ -141,7 +153,8 @@
             android:layout_margin="5dp"
             android:layout_weight="1"
             android:adjustViewBounds="true"
-            android:src="@drawable/trasera" />
+            android:src="@drawable/trasera"
+            android:onClick="click"/>
 
     </LinearLayout>
 
