@@ -1,22 +1,14 @@
 package com.example.memorytron
 
-import android.graphics.Bitmap
-import android.graphics.Canvas
-import android.graphics.drawable.BitmapDrawable
 import android.graphics.drawable.Drawable
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.view.View
-import com.example.memorytron.databinding.ActivityJuegoBinding
-import android.util.Log
 import android.widget.ImageView
-import androidx.core.graphics.createBitmap
-import androidx.core.graphics.drawable.toBitmap
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.graphics.drawable.toDrawable
-import androidx.core.os.HandlerCompat.postDelayed
-import kotlinx.coroutines.sync.Mutex
+import com.example.memorytron.databinding.ActivityJuegoBinding
 import kotlinx.coroutines.sync.Semaphore
 
 
@@ -65,7 +57,7 @@ class Juego : AppCompatActivity() {
         return false
     }
 
-    fun vidaMenos() {
+    private fun vidaMenos() {
         when (vidas) {
             4 -> {
                 bind.cora4.setImageResource(R.drawable.cora_animacion)
@@ -125,7 +117,7 @@ class Juego : AppCompatActivity() {
         volteada[r] = false
     }
 
-    var semaphore = Semaphore(1)
+    private var semaphore = Semaphore(1)
     fun click(view: View) {
         if (vidas > 0) {
             if (semaphore.tryAcquire()) {
