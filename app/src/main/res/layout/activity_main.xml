@@ -71,6 +71,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:background="@drawable/trasera"
+        android:scaleType="centerCrop"
          />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
