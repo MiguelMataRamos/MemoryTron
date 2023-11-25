@@ -15,6 +15,7 @@ import android.widget.ImageView
 import androidx.core.graphics.createBitmap
 import androidx.core.graphics.drawable.toBitmap
 import androidx.core.graphics.drawable.toDrawable
+import androidx.core.os.HandlerCompat.postDelayed
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.Semaphore
 
@@ -64,22 +65,56 @@ class Juego : AppCompatActivity() {
         return false
     }
 
-    fun vidaMenos(){
-        when(vidas){
-            4 -> bind.cora4.setImageResource(R.drawable.cora_vacio)
-            3 -> bind.cora3.setImageResource(R.drawable.cora_vacio)
-            2 -> bind.cora2.setImageResource(R.drawable.cora_vacio)
-            1 -> bind.cora1.setImageResource(R.drawable.cora_vacio)
-        }
-        vidas --
+    fun vidaMenos() {
+        when (vidas) {
+            4 -> {
+                bind.cora4.setImageResource(R.drawable.cora_animacion)
 
-        if (vidas==0){
+                Handler(Looper.getMainLooper()).postDelayed({
+                    bind.cora4.setImageResource(R.drawable.cora_vacio)
+
+                }, 500)
+
+            }
+
+            3 -> {
+                bind.cora3.setImageResource(R.drawable.cora_animacion)
+
+                Handler(Looper.getMainLooper()).postDelayed({
+                    bind.cora3.setImageResource(R.drawable.cora_vacio)
+
+                }, 500)
+            }
+
+            2 -> {
+                bind.cora2.setImageResource(R.drawable.cora_animacion)
+
+                Handler(Looper.getMainLooper()).postDelayed({
+                    bind.cora2.setImageResource(R.drawable.cora_vacio)
+
+                }, 500)
+            }
+
+            1 -> {
+                bind.cora1.setImageResource(R.drawable.cora_animacion)
+
+                Handler(Looper.getMainLooper()).postDelayed({
+                    bind.cora1.setImageResource(R.drawable.cora_vacio)
+
+                }, 500)
+            }
+        }
+
+        vidas--
+
+        if (vidas == 0) {
             bind.card.visibility = View.VISIBLE
             bind.restart.visibility = View.VISIBLE
             bind.chronometer.stop()
         }
-
     }
+
+
     private fun mostrar(i: ImageView?, r: Int) {
         i?.setImageResource(cartas[r])
         volteada[r] = true
@@ -92,8 +127,8 @@ class Juego : AppCompatActivity() {
 
     var semaphore = Semaphore(1)
     fun click(view: View) {
-        if (vidas>0){
-            if (semaphore.tryAcquire()){
+        if (vidas > 0) {
+            if (semaphore.tryAcquire()) {
                 when (view.id) {
                     R.id.c1 -> {
                         if (!volteada[0]) {
@@ -477,6 +512,7 @@ class Juego : AppCompatActivity() {
         }
 
     }
-
 }
+
+
 
