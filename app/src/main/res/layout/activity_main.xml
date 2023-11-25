@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="@color/gray">
+    android:background="@color/black2">
 
     <TextView
         android:id="@+id/t"
@@ -18,7 +18,7 @@
         android:textSize="20sp"
         android:gravity="center"
         android:layout_marginTop="20dp"
-        android:textColor="@color/black"/>
+        android:textColor="@color/white"/>
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -29,7 +29,7 @@
         android:layout_margin="30dp"
         android:elevation="10dp"
         app:cardCornerRadius="10dp"
-        app:cardBackgroundColor="@color/black2"
+        app:cardBackgroundColor="@color/white2"
         >
 
         <TextView
@@ -43,7 +43,7 @@
             android:gravity="center"
             android:layout_gravity="center"
             android:padding="10dp"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             />
 
     </androidx.cardview.widget.CardView>
