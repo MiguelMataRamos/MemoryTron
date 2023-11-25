@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">MemoryTron</string>
+    <string name="msj_bienvenida">
+        Bienvenido a MemoryTron tu juego de cartas favorito de todos los tiempos
+    </string>
+    <string name="explicacion">El juego consiste en encontrar las parejas de cartas. Si la segunda carta que levantas no es igual que la primera perderas una vida. Si te quedas sin vidas acaba el juego</string>
+
 </resources>
