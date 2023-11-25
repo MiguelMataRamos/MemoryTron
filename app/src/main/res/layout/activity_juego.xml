@@ -249,7 +249,9 @@
             android:padding="10dp"
             android:text="Lamento comunicarle que es usted un perdedor... Sigue practicando"
             android:textSize="10sp"
-            android:gravity="center"/>
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:background="@color/black2"/>
 
     </androidx.cardview.widget.CardView>
 
