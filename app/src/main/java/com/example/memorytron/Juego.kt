@@ -154,7 +154,7 @@ class Juego : AppCompatActivity() {
             bind.restart.visibility = View.VISIBLE
             bind.chronometer.stop()
             var tiempo = bind.chronometer.text.toString()
-            bind.textView.text = getString(R.string.victoria) + tiempo
+            bind.textView.text = getString(R.string.victoria) + "\n"+tiempo
         }
     }
 

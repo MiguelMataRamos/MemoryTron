@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margen_corazones">10dp</dimen>
+    <dimen name="heart_size">30dp</dimen>
+    <dimen name="margen_cartas">5dp</dimen>
+    <dimen name="margen_boton">50dp</dimen>
+    <dimen name="ancho_boton">40dp</dimen>
+    <dimen name="tamaño_texto">15sp</dimen>
+    <dimen name="padding_texto">10dp</dimen>
+</resources>
