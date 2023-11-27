@@ -37,7 +37,6 @@ class Juego : AppCompatActivity() {
         setContentView(bind.root)
         var oculto = intent.getBooleanExtra("oculto", false)
         if (oculto) {
-            cartas.clear()
             cartas = mutableListOf(
                 R.drawable.ruso1,
                 R.drawable.ruso2,
