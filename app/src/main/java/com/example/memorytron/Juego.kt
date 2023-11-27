@@ -32,7 +32,7 @@ class Juego : AppCompatActivity() {
     )
     private var volteada = MutableList(12) { false }
     private var primero = true
-    private var vidas = 4
+    private var vidas = 5
     private var carta1: Drawable? = null
     private var carta2: Drawable? = null
     private var vista1: ImageView? = null
