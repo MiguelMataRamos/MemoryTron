@@ -4,10 +4,13 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.View
 import com.example.memorytron.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     private lateinit var bind : ActivityMainBinding
+    private var cont = 0
+    private var oculto = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -16,7 +19,22 @@ class MainActivity : AppCompatActivity() {
 
         bind.jugar.setOnClickListener {
             var intent = Intent(this,Juego::class.java)
+            intent.putExtra("oculto",oculto)
             startActivity(intent)
+        }
+        bind.jugar2.setOnClickListener {
+            var intent = Intent(this,Juego::class.java)
+            intent.putExtra("oculto",oculto)
+            startActivity(intent)
+        }
+
+        bind.card.setOnClickListener {
+            cont ++
+            if (cont > 5){
+                bind.jugar.visibility = View.INVISIBLE
+                bind.jugar2.visibility = View.VISIBLE
+                oculto = true
+            }
         }
 
     }

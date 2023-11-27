@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="@color/black2">
+    android:background="@color/black2"
+    >
 
     <TextView
         android:id="@+id/t"
@@ -59,6 +60,19 @@
         app:layout_constraintTop_toTopOf="parent"
         android:backgroundTint="@color/white"
         android:textColor="@color/black"/>
+
+    <Button
+        android:id="@+id/jugar2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="проклятое начало"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:backgroundTint="@color/white"
+        android:textColor="@color/black"
+        android:visibility="gone"/>
 
     <ImageView
         android:id="@+id/baraja"
