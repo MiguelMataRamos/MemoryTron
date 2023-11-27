@@ -115,15 +115,15 @@ class Juego : AppCompatActivity() {
 
     private fun comprobarPareja(i1: ImageView, i2: ImageView): Boolean {
 
-        var d1 = i1.drawable
-        var d2 = i2.drawable
+        val d1 = i1.drawable
+        val d2 = i2.drawable
 
-        var bitmap1 =
+        val bitmap1 =
             Bitmap.createBitmap(d1.intrinsicWidth, d1.intrinsicHeight, Bitmap.Config.ARGB_8888)
-        var bitmap2 =
+        val bitmap2 =
             Bitmap.createBitmap(d2.intrinsicWidth, d2.intrinsicHeight, Bitmap.Config.ARGB_8888)
-        var canvas1 = Canvas(bitmap1)
-        var canvas2 = Canvas(bitmap2)
+        val canvas1 = Canvas(bitmap1)
+        val canvas2 = Canvas(bitmap2)
 
         d1.setBounds(0, 0, canvas1.width, canvas1.height)
         d2.setBounds(0, 0, canvas2.width, canvas2.height)
@@ -153,7 +153,7 @@ class Juego : AppCompatActivity() {
             bind.card.visibility = View.VISIBLE
             bind.restart.visibility = View.VISIBLE
             bind.chronometer.stop()
-            var tiempo = bind.chronometer.text.toString()
+            val tiempo = bind.chronometer.text.toString()
             bind.textView.text = getString(R.string.victoria) + "\n"+tiempo
         }
     }
