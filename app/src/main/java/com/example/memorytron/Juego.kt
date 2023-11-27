@@ -172,7 +172,7 @@ class Juego : AppCompatActivity() {
                                 carta1 = cartas[indice1].toDrawable()
                                 mostrar(vista1, indice1)
                                 primero = false
-                                semaphore.release()
+
 
                             } else {
                                 vista2 = bind.c1
@@ -185,20 +185,19 @@ class Juego : AppCompatActivity() {
                                     vista2 = null
                                     primero = true
                                     comprobarFin()
-                                    semaphore.release()
                                 } else {
                                     Handler(Looper.getMainLooper()).postDelayed({
                                         ocultar(vista1, indice1)
                                         ocultar(vista2, indice2)
                                         primero = true
                                         vidaMenos()
-                                        semaphore.release()
                                     }, 1000)
                                 }
 
                             }
 
                         }
+                        semaphore.release()
 
                     }
 
@@ -211,7 +210,6 @@ class Juego : AppCompatActivity() {
                                 carta1 = cartas[indice1].toDrawable()
                                 mostrar(vista1, indice1)
                                 primero = false
-                                semaphore.release()
 
                             } else {
                                 vista2 = bind.c2
@@ -224,7 +222,6 @@ class Juego : AppCompatActivity() {
                                     vista2 = null
                                     primero = true
                                     comprobarFin()
-                                    semaphore.release()
                                 } else {
                                     Handler(Looper.getMainLooper()).postDelayed({
                                         ocultar(vista1, indice1)
@@ -234,11 +231,10 @@ class Juego : AppCompatActivity() {
                                         semaphore.release()
                                     }, 1000)
                                 }
-
-
                             }
 
                         }
+                        semaphore.release()
 
                     }
 
@@ -251,7 +247,6 @@ class Juego : AppCompatActivity() {
                                 carta1 = cartas[indice1].toDrawable()
                                 mostrar(vista1, indice1)
                                 primero = false
-                                semaphore.release()
 
                             } else {
                                 vista2 = bind.c3
@@ -264,20 +259,19 @@ class Juego : AppCompatActivity() {
                                     vista2 = null
                                     primero = true
                                     comprobarFin()
-                                    semaphore.release()
                                 } else {
                                     Handler(Looper.getMainLooper()).postDelayed({
                                         ocultar(vista1, indice1)
                                         ocultar(vista2, indice2)
                                         primero = true
                                         vidaMenos()
-                                        semaphore.release()
                                     }, 1000)
                                 }
 
                             }
 
                         }
+                        semaphore.release()
                     }
 
                     R.id.c4 -> {
@@ -289,7 +283,6 @@ class Juego : AppCompatActivity() {
                                 carta1 = cartas[indice1].toDrawable()
                                 mostrar(vista1, indice1)
                                 primero = false
-                                semaphore.release()
 
                             } else {
                                 vista2 = bind.c4
@@ -302,7 +295,6 @@ class Juego : AppCompatActivity() {
                                     vista2 = null
                                     primero = true
                                     comprobarFin()
-                                    semaphore.release()
                                 } else {
 
                                     Handler(Looper.getMainLooper()).postDelayed({
@@ -310,13 +302,13 @@ class Juego : AppCompatActivity() {
                                         ocultar(vista2, indice2)
                                         primero = true
                                         vidaMenos()
-                                        semaphore.release()
                                     }, 1000)
                                 }
 
                             }
-
                         }
+                        semaphore.release()
+
                     }
 
                     R.id.c5 -> {
@@ -328,7 +320,6 @@ class Juego : AppCompatActivity() {
                                 carta1 = cartas[indice1].toDrawable()
                                 mostrar(vista1, indice1)
                                 primero = false
-                                semaphore.release()
 
                             } else {
                                 vista2 = bind.c5
@@ -341,7 +332,6 @@ class Juego : AppCompatActivity() {
                                     vista2 = null
                                     primero = true
                                     comprobarFin()
-                                    semaphore.release()
                                 } else {
 
                                     Handler(Looper.getMainLooper()).postDelayed({
@@ -355,6 +345,7 @@ class Juego : AppCompatActivity() {
                             }
 
                         }
+                        semaphore.release()
                     }
 
                     R.id.c6 -> {
@@ -366,7 +357,6 @@ class Juego : AppCompatActivity() {
                                 carta1 = cartas[indice1].toDrawable()
                                 mostrar(vista1, indice1)
                                 primero = false
-                                semaphore.release()
 
                             } else {
                                 vista2 = bind.c6
@@ -379,19 +369,18 @@ class Juego : AppCompatActivity() {
                                     vista2 = null
                                     primero = true
                                     comprobarFin()
-                                    semaphore.release()
                                 } else {
                                     Handler(Looper.getMainLooper()).postDelayed({
                                         ocultar(vista1, indice1)
                                         ocultar(vista2, indice2)
                                         primero = true
                                         vidaMenos()
-                                        semaphore.release()
                                     }, 1000)
                                 }
                             }
 
                         }
+                        semaphore.release()
                     }
 
                     R.id.c7 -> {
@@ -403,7 +392,6 @@ class Juego : AppCompatActivity() {
                                 carta1 = cartas[indice1].toDrawable()
                                 mostrar(vista1, indice1)
                                 primero = false
-                                semaphore.release()
 
                             } else {
                                 vista2 = bind.c7
@@ -416,19 +404,18 @@ class Juego : AppCompatActivity() {
                                     vista2 = null
                                     primero = true
                                     comprobarFin()
-                                    semaphore.release()
                                 } else {
                                     Handler(Looper.getMainLooper()).postDelayed({
                                         ocultar(vista1, indice1)
                                         ocultar(vista2, indice2)
                                         primero = true
                                         vidaMenos()
-                                        semaphore.release()
                                     }, 1000)
                                 }
                             }
 
                         }
+                        semaphore.release()
                     }
 
                     R.id.c8 -> {
@@ -440,7 +427,6 @@ class Juego : AppCompatActivity() {
                                 carta1 = cartas[indice1].toDrawable()
                                 mostrar(vista1, indice1)
                                 primero = false
-                                semaphore.release()
 
                             } else {
                                 vista2 = bind.c8
@@ -453,19 +439,18 @@ class Juego : AppCompatActivity() {
                                     vista2 = null
                                     primero = true
                                     comprobarFin()
-                                    semaphore.release()
                                 } else {
                                     Handler(Looper.getMainLooper()).postDelayed({
                                         ocultar(vista1, indice1)
                                         ocultar(vista2, indice2)
                                         primero = true
                                         vidaMenos()
-                                        semaphore.release()
                                     }, 1000)
                                 }
                             }
 
                         }
+                        semaphore.release()
                     }
 
                     R.id.c9 -> {
@@ -477,7 +462,6 @@ class Juego : AppCompatActivity() {
                                 carta1 = cartas[indice1].toDrawable()
                                 mostrar(vista1, indice1)
                                 primero = false
-                                semaphore.release()
 
                             } else {
                                 vista2 = bind.c9
@@ -490,19 +474,18 @@ class Juego : AppCompatActivity() {
                                     vista2 = null
                                     primero = true
                                     comprobarFin()
-                                    semaphore.release()
                                 } else {
                                     Handler(Looper.getMainLooper()).postDelayed({
                                         ocultar(vista1, indice1)
                                         ocultar(vista2, indice2)
                                         primero = true
                                         vidaMenos()
-                                        semaphore.release()
                                     }, 1000)
                                 }
                             }
 
                         }
+                        semaphore.release()
                     }
 
                     R.id.c10 -> {
@@ -514,7 +497,6 @@ class Juego : AppCompatActivity() {
                                 carta1 = cartas[indice1].toDrawable()
                                 mostrar(vista1, indice1)
                                 primero = false
-                                semaphore.release()
 
                             } else {
                                 vista2 = bind.c10
@@ -527,19 +509,18 @@ class Juego : AppCompatActivity() {
                                     vista2 = null
                                     primero = true
                                     comprobarFin()
-                                    semaphore.release()
                                 } else {
                                     Handler(Looper.getMainLooper()).postDelayed({
                                         ocultar(vista1, indice1)
                                         ocultar(vista2, indice2)
                                         primero = true
                                         vidaMenos()
-                                        semaphore.release()
                                     }, 1000)
                                 }
                             }
 
                         }
+                        semaphore.release()
                     }
 
                     R.id.c11 -> {
@@ -551,7 +532,6 @@ class Juego : AppCompatActivity() {
                                 carta1 = cartas[indice1].toDrawable()
                                 mostrar(vista1, indice1)
                                 primero = false
-                                semaphore.release()
 
                             } else {
                                 vista2 = bind.c11
@@ -564,19 +544,18 @@ class Juego : AppCompatActivity() {
                                     vista2 = null
                                     primero = true
                                     comprobarFin()
-                                    semaphore.release()
                                 } else {
                                     Handler(Looper.getMainLooper()).postDelayed({
                                         ocultar(vista1, indice1)
                                         ocultar(vista2, indice2)
                                         primero = true
                                         vidaMenos()
-                                        semaphore.release()
                                     }, 1000)
                                 }
                             }
 
                         }
+                        semaphore.release()
                     }
 
                     R.id.c12 -> {
@@ -588,7 +567,6 @@ class Juego : AppCompatActivity() {
                                 carta1 = cartas[indice1].toDrawable()
                                 mostrar(vista1, indice1)
                                 primero = false
-                                semaphore.release()
 
                             } else {
                                 vista2 = bind.c12
@@ -601,19 +579,18 @@ class Juego : AppCompatActivity() {
                                     vista2 = null
                                     primero = true
                                     comprobarFin()
-                                    semaphore.release()
                                 } else {
                                     Handler(Looper.getMainLooper()).postDelayed({
                                         ocultar(vista1, indice1)
                                         ocultar(vista2, indice2)
                                         primero = true
                                         vidaMenos()
-                                        semaphore.release()
                                     }, 1000)
                                 }
                             }
 
                         }
+                        semaphore.release()
                     }
 
                 }
