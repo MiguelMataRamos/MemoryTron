@@ -63,6 +63,7 @@ class Juego : AppCompatActivity() {
             cartas.add(R.drawable.ruso5)
             cartas.add(R.drawable.ruso6)
             bind.juego.setBackgroundResource(R.drawable.tripaloski)
+
         }
         cartas.shuffle()
         bind.chronometer.start()
