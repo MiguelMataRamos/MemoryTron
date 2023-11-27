@@ -4,5 +4,7 @@
         Bienvenido a MemoryTron tu juego de cartas favorito de todos los tiempos
     </string>
     <string name="explicacion">El juego consiste en encontrar las parejas de cartas. Si la segunda carta que levantas no es igual que la primera perderas una vida. Si te quedas sin vidas acaba el juego</string>
+    <string name="derrota">Lamento comunicarle que es usted un perdedor... Sigue practicando</string>
+    <string name="victoria">Felicidades campeon, ¡tienes una memoria prodijiosa!. Has ganado en </string>
 
 </resources>

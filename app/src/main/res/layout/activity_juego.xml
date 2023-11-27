@@ -63,6 +63,19 @@
             app:layout_constraintStart_toEndOf="@+id/cora3"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/cora5"
+            android:layout_margin="10dp"
+            />
+
+        <ImageView
+            android:id="@+id/cora5"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/cora"
+            android:adjustViewBounds="true"
+            app:layout_constraintStart_toEndOf="@id/cora4"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_margin="10dp"
             />
@@ -247,8 +260,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp"
-            android:text="Lamento comunicarle que es usted un perdedor... Sigue practicando"
-            android:textSize="10sp"
+            android:text="@string/derrota"
+            android:textSize="15sp"
             android:gravity="center"
             android:textColor="@color/white"
             android:background="@color/black2"/>
