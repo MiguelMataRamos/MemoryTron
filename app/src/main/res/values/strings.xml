@@ -3,9 +3,15 @@
     <string name="msj_bienvenida">
         Bienvenido a MemoryTron tu juego de cartas favorito de todos los tiempos
     </string>
+    <string name="msj_bienvenidaR">
+        Добро пожаловать в MemoryTron, вашу любимую карточную игру всех времен
+    </string>
     <string name="explicacion">El juego consiste en encontrar las parejas de cartas. Si la segunda carta que levantas no es igual que la primera perderas una vida. Si te quedas sin vidas acaba el juego</string>
+    <string name="explicacionR">Игра состоит из поиска пар карт. Если вторая карта, которую вы подберете, не такая же, как первая, вы потеряете жизнь. Если у вас закончатся жизни, игра закончится.</string>
     <string name="derrota">Lamento comunicarle que es usted un perdedor... Sigue practicando</string>
+    <string name="derrotaR">С сожалением сообщаю вам, что вы неудачник... Продолжайте тренироваться.</string>
     <string name="victoria">Felicidades campeon, ¡tienes una memoria prodijiosa!. Has ganado en </string>
+    <string name="victoriaR">Поздравляем чемпиона, у тебя потрясающая память! Вы выиграли в</string>
     <string name="texto_boton">Reiniciar</string>
 
 </resources>

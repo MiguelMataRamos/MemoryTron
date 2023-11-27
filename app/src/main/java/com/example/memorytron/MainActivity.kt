@@ -33,6 +33,10 @@ class MainActivity : AppCompatActivity() {
             if (cont > 5){
                 bind.jugar.visibility = View.INVISIBLE
                 bind.jugar2.visibility = View.VISIBLE
+                bind.t.text = getString(R.string.msj_bienvenidaR)
+                bind.t.textSize = 15f
+                bind.explicacion.text = getString(R.string.explicacionR)
+                bind.explicacion.textSize = 15f
                 oculto = true
             }
         }
