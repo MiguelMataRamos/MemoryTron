@@ -273,7 +273,7 @@
         android:id="@+id/restart"
         android:layout_width="match_parent"
         android:layout_height="@dimen/ancho_boton"
-        android:text="Restart"
+        android:text="@string/texto_boton"
         android:textSize="@dimen/tamaño_texto"
         app:layout_constraintTop_toBottomOf="@+id/fila3"
         app:layout_constraintStart_toStartOf="parent"
