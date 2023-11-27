@@ -63,6 +63,9 @@ class Juego : AppCompatActivity() {
             cartas.add(R.drawable.ruso5)
             cartas.add(R.drawable.ruso6)
             bind.juego.setBackgroundResource(R.drawable.tripaloski)
+            bind.textView.text = getString(R.string.derrotaR)
+            bind.textView.text = getString(R.string.victoriaR)
+            bind.textView.setBackgroundColor(getColor(R.color.yellow))
 
         }
         cartas.shuffle()
