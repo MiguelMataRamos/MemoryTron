@@ -10,26 +10,14 @@ import android.view.View
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.graphics.drawable.toDrawable
+import androidx.core.os.postDelayed
 import com.example.memorytron.databinding.ActivityJuegoBinding
 import kotlinx.coroutines.sync.Semaphore
 
 
 class Juego : AppCompatActivity() {
     private lateinit var bind: ActivityJuegoBinding
-    private var cartas = mutableListOf(
-        R.drawable.carta1,
-        R.drawable.carta2,
-        R.drawable.carta3,
-        R.drawable.carta4,
-        R.drawable.carta5,
-        R.drawable.carta6,
-        R.drawable.carta1,
-        R.drawable.carta2,
-        R.drawable.carta3,
-        R.drawable.carta4,
-        R.drawable.carta5,
-        R.drawable.carta6
-    )
+    private lateinit var cartas: MutableList<Int>
     private var volteada = MutableList(12) { false }
     private var primero = true
     private var vidas = 5
@@ -47,28 +35,48 @@ class Juego : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         bind = ActivityJuegoBinding.inflate(layoutInflater)
         setContentView(bind.root)
-        var oculto = intent.getBooleanExtra("oculto",false)
-        if (oculto){
+        var oculto = intent.getBooleanExtra("oculto", false)
+        if (oculto) {
             cartas.clear()
-            cartas.add(R.drawable.ruso1)
-            cartas.add(R.drawable.ruso2)
-            cartas.add(R.drawable.ruso3)
-            cartas.add(R.drawable.ruso4)
-            cartas.add(R.drawable.ruso5)
-            cartas.add(R.drawable.ruso6)
-            cartas.add(R.drawable.ruso1)
-            cartas.add(R.drawable.ruso2)
-            cartas.add(R.drawable.ruso3)
-            cartas.add(R.drawable.ruso4)
-            cartas.add(R.drawable.ruso5)
-            cartas.add(R.drawable.ruso6)
+            cartas = mutableListOf(
+                R.drawable.ruso1,
+                R.drawable.ruso2,
+                R.drawable.ruso3,
+                R.drawable.ruso4,
+                R.drawable.ruso5,
+                R.drawable.ruso6,
+                R.drawable.ruso1,
+                R.drawable.ruso2,
+                R.drawable.ruso3,
+                R.drawable.ruso4,
+                R.drawable.ruso5,
+                R.drawable.ruso6
+            )
+
             bind.juego.setBackgroundResource(R.drawable.tripaloski)
             bind.textView.text = getString(R.string.derrotaR)
             bind.textView.text = getString(R.string.victoriaR)
             bind.textView.setBackgroundColor(getColor(R.color.yellow))
 
+        } else {
+            cartas = mutableListOf(
+                R.drawable.carta1,
+                R.drawable.carta2,
+                R.drawable.carta3,
+                R.drawable.carta4,
+                R.drawable.carta5,
+                R.drawable.carta6,
+                R.drawable.carta1,
+                R.drawable.carta2,
+                R.drawable.carta3,
+                R.drawable.carta4,
+                R.drawable.carta5,
+                R.drawable.carta6
+            )
         }
+
         cartas.shuffle()
+
         bind.chronometer.start()
 
         bind.restart.setOnClickListener {
@@ -89,6 +97,7 @@ class Juego : AppCompatActivity() {
                 }, 500)
 
             }
+
             4 -> {
                 bind.cora4.setImageResource(R.drawable.cora_animacion)
 
@@ -177,7 +186,7 @@ class Juego : AppCompatActivity() {
             bind.restart.visibility = View.VISIBLE
             bind.chronometer.stop()
             val tiempo = bind.chronometer.text.toString()
-            bind.textView.text = getString(R.string.victoria) + "\n"+tiempo
+            bind.textView.text = getString(R.string.victoria) + "\n" + tiempo
         }
     }
 
@@ -217,11 +226,12 @@ class Juego : AppCompatActivity() {
                                         vidaMenos()
                                         semaphore.release()
                                     }, 1000)
+
                                 }
 
                             }
 
-                        }else{
+                        } else {
                             semaphore.release()
                         }
 
@@ -262,7 +272,7 @@ class Juego : AppCompatActivity() {
                                 }
                             }
 
-                        }else{
+                        } else {
                             semaphore.release()
                         }
 
@@ -304,7 +314,7 @@ class Juego : AppCompatActivity() {
 
                             }
 
-                        }else{
+                        } else {
                             semaphore.release()
                         }
 
@@ -345,7 +355,7 @@ class Juego : AppCompatActivity() {
                                 }
 
                             }
-                        }else{
+                        } else {
                             semaphore.release()
                         }
 
@@ -387,7 +397,7 @@ class Juego : AppCompatActivity() {
                                 }
                             }
 
-                        }else{
+                        } else {
                             semaphore.release()
                         }
 
@@ -427,7 +437,7 @@ class Juego : AppCompatActivity() {
                                 }
                             }
 
-                        }else{
+                        } else {
                             semaphore.release()
                         }
                     }
@@ -466,7 +476,7 @@ class Juego : AppCompatActivity() {
                                 }
                             }
 
-                        }else{
+                        } else {
                             semaphore.release()
                         }
                     }
@@ -504,7 +514,7 @@ class Juego : AppCompatActivity() {
                                 }
                             }
 
-                        }else{
+                        } else {
                             semaphore.release()
                         }
                     }
@@ -543,7 +553,7 @@ class Juego : AppCompatActivity() {
                                 }
                             }
 
-                        }else{
+                        } else {
                             semaphore.release()
                         }
                     }
@@ -581,7 +591,7 @@ class Juego : AppCompatActivity() {
                                 }
                             }
 
-                        }else{
+                        } else {
                             semaphore.release()
                         }
                     }
@@ -620,7 +630,7 @@ class Juego : AppCompatActivity() {
                                 }
                             }
 
-                        }else{
+                        } else {
                             semaphore.release()
                         }
                     }
@@ -658,7 +668,7 @@ class Juego : AppCompatActivity() {
                                 }
                             }
 
-                        }else{
+                        } else {
                             semaphore.release()
                         }
                     }

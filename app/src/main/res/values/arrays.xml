@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer-array name="baraja">
+        <item>@drawable/carta1</item>
+        <item>@drawable/carta2</item>
+        <item>@drawable/carta3</item>
+        <item>@drawable/carta4</item>
+        <item>@drawable/carta5</item>
+        <item>@drawable/carta6</item>
+    </integer-array>
+</resources>
