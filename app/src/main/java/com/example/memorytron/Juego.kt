@@ -3,6 +3,7 @@ package com.example.memorytron
 import android.graphics.Bitmap
 import android.graphics.Canvas
 import android.graphics.drawable.Drawable
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -51,6 +52,9 @@ class Juego : AppCompatActivity() {
                 R.drawable.ruso5,
                 R.drawable.ruso6
             )
+
+            val mediaPlayer: MediaPlayer? = MediaPlayer.create(this, R.raw.tripaloski)
+            mediaPlayer?.start()
 
             bind.juego.setBackgroundResource(R.drawable.tripaloski)
             bind.textView.text = getString(R.string.derrotaR)
