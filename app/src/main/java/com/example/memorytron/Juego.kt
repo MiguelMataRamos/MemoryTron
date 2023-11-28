@@ -53,8 +53,8 @@ class Juego : AppCompatActivity() {
                 R.drawable.ruso6
             )
 
-            val mediaPlayer: MediaPlayer? = MediaPlayer.create(this, R.raw.tripaloski)
-            mediaPlayer?.start()
+            val musicaR: MediaPlayer? = MediaPlayer.create(this, R.raw.tripaloski)
+            musicaR?.start()
 
             bind.juego.setBackgroundResource(R.drawable.tripaloski)
             bind.textView.text = getString(R.string.derrotaR)
