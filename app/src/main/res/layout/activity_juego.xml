@@ -290,13 +290,12 @@
         android:id="@+id/chronometer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="24sp"
+        android:textSize="@dimen/size_crono"
         android:layout_gravity="center"
-        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/vidas"
-        app:layout_constraintBottom_toBottomOf="@+id/vidas"
-        android:layout_marginBottom="@dimen/margen_corazones"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/fila1"
+        android:layout_marginEnd="@dimen/margen_crono"
          />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

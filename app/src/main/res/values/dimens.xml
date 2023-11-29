@@ -7,4 +7,6 @@
     <dimen name="ancho_boton">40dp</dimen>
     <dimen name="tamaño_texto">15sp</dimen>
     <dimen name="padding_texto">10dp</dimen>
+    <dimen name="margen_crono">15dp</dimen>
+    <dimen name="size_crono">24sp</dimen>
 </resources>

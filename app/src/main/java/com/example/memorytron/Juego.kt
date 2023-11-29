@@ -80,8 +80,6 @@ class Juego : AppCompatActivity() {
             musicaR = MediaPlayer.create(this, R.raw.tripaloski)
             musicaR?.start()
             giroR = MediaPlayer.create(this,R.raw.giror)
-
-
             //Pongo fondo ruso
             bind.juego.setBackgroundResource(R.drawable.tripaloski)
             //Pongo textos en ruso
