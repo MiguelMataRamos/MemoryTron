@@ -127,13 +127,11 @@ class Juego : AppCompatActivity() {
 
     }
 
+    //Override para cuando retrocedes
     override fun onBackPressed() {
         musicaR?.stop()
-        musicaR?.release()
         musicaChampion?.stop()
-        musicaChampion?.release()
         sonidogracioso?.stop()
-        sonidogracioso?.release()
         super.onBackPressed()
     }
 
@@ -203,9 +201,15 @@ class Juego : AppCompatActivity() {
             bind.restart.visibility = View.VISIBLE
             //Paro el cronometro
             bind.chronometer.stop()
-            //Inicio la musica
-            sonidogracioso = MediaPlayer.create(this, R.raw.sonidogracioso)
-            sonidogracioso!!.start()
+
+            //Compruebo el modo
+            if (oculto){
+                //Inicio la musica
+                musicaR?.stop()
+                sonidogracioso = MediaPlayer.create(this, R.raw.sonidogracioso)
+                sonidogracioso!!.start()
+            }
+
         }
     }
 
