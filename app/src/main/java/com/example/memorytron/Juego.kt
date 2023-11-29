@@ -21,6 +21,7 @@ class Juego : AppCompatActivity() {
     private var musicaR: MediaPlayer? = null
     private var musicaChampion: MediaPlayer? = null
     private var sonidogracioso: MediaPlayer? = null
+    private var giroR: MediaPlayer? = null
 
     //    Binding
     private lateinit var bind: ActivityJuegoBinding
@@ -28,6 +29,9 @@ class Juego : AppCompatActivity() {
     //    Cartas
     private lateinit var cartas: MutableList<Int>
     private var volteada = MutableList(12) { false }
+
+    //Recojo la variable que indica si es modo secreto
+    private var oculto = false
 
     //    Variables de la partida
     private var terminado = false
@@ -52,8 +56,7 @@ class Juego : AppCompatActivity() {
         bind = ActivityJuegoBinding.inflate(layoutInflater)
         setContentView(bind.root)
 
-        //Recojo la variable que indica si es modo secreto
-        var oculto = intent.getBooleanExtra("oculto", false)
+        oculto = intent.getBooleanExtra("oculto", false)
         //Si ha activado el modo secreto
         if (oculto) {
             //Pongo las cartas rusas
@@ -75,6 +78,8 @@ class Juego : AppCompatActivity() {
             //Inicio la musica rusa
             musicaR = MediaPlayer.create(this, R.raw.tripaloski)
             musicaR?.start()
+            giroR = MediaPlayer.create(this,R.raw.giror)
+
 
             //Pongo fondo ruso
             bind.juego.setBackgroundResource(R.drawable.tripaloski)
@@ -118,8 +123,19 @@ class Juego : AppCompatActivity() {
         }
 
 
+
+
     }
 
+    override fun onBackPressed() {
+        musicaR?.stop()
+        musicaR?.release()
+        musicaChampion?.stop()
+        musicaChampion?.release()
+        sonidogracioso?.stop()
+        sonidogracioso?.release()
+        super.onBackPressed()
+    }
 
     //Funcion para quitar vidas
     private fun vidaMenos() {
@@ -223,6 +239,10 @@ class Juego : AppCompatActivity() {
 
     //Funcion para mostrar la carta
     private fun mostrar(i: ImageView?, r: Int) {
+        if (oculto){
+            giroR?.start()
+        }
+
         i?.setImageResource(cartas[r])
         volteada[r] = true
     }
