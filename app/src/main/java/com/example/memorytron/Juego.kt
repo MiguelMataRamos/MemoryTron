@@ -17,20 +17,25 @@ import kotlinx.coroutines.sync.Semaphore
 
 
 class Juego : AppCompatActivity() {
+    //    Musica
     private var musicaR: MediaPlayer? = null
     private var musicaChampion: MediaPlayer? = null
     private var sonidogracioso: MediaPlayer? = null
 
+    //    Binding
     private lateinit var bind: ActivityJuegoBinding
 
+    //    Cartas
     private lateinit var cartas: MutableList<Int>
     private var volteada = MutableList(12) { false }
 
+    //    Variables de la partida
     private var terminado = false
     private var primero = true
     private var vidas = 5
     private var contadorparejas = 0
 
+    //    Variables para comparar cartas
     private var carta1: Drawable? = null
     private var carta2: Drawable? = null
     private var vista1: ImageView? = null
@@ -38,6 +43,7 @@ class Juego : AppCompatActivity() {
     private var indice1: Int = -1
     private var indice2: Int = -1
 
+    //    Semaforo que controla cada jugada
     private var semaphore = Semaphore(1)
 
 
@@ -45,8 +51,12 @@ class Juego : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         bind = ActivityJuegoBinding.inflate(layoutInflater)
         setContentView(bind.root)
+
+        //Recojo la variable que indica si es modo secreto
         var oculto = intent.getBooleanExtra("oculto", false)
+        //Si ha activado el modo secreto
         if (oculto) {
+            //Pongo las cartas rusas
             cartas = mutableListOf(
                 R.drawable.ruso1,
                 R.drawable.ruso2,
@@ -62,15 +72,19 @@ class Juego : AppCompatActivity() {
                 R.drawable.ruso6
             )
 
+            //Inicio la musica rusa
             musicaR = MediaPlayer.create(this, R.raw.tripaloski)
             musicaR?.start()
 
+            //Pongo fondo ruso
             bind.juego.setBackgroundResource(R.drawable.tripaloski)
+            //Pongo textos en ruso
             bind.textView.text = getString(R.string.derrotaR)
             bind.textView.text = getString(R.string.victoriaR)
             bind.textView.setBackgroundColor(getColor(R.color.yellow))
 
         } else {
+            //Pongo las cartas estandar
             cartas = mutableListOf(
                 R.drawable.carta1,
                 R.drawable.carta2,
@@ -87,11 +101,15 @@ class Juego : AppCompatActivity() {
             )
         }
 
+        //Desordeno las cartas
         cartas.shuffle()
 
+        //Inicio cronometro
         bind.chronometer.start()
 
+        //Funcion boton restart
         bind.restart.setOnClickListener {
+            //Paro todas las canciones
             musicaChampion?.stop()
             musicaChampion?.release()
             sonidogracioso?.stop()
@@ -103,11 +121,15 @@ class Juego : AppCompatActivity() {
     }
 
 
+    //Funcion para quitar vidas
     private fun vidaMenos() {
+        //Controlo que corazon cambiar segun las vidas
         when (vidas) {
             5 -> {
+                //Pongo el corazon roto
                 bind.cora5.setImageResource(R.drawable.cora_animacion)
 
+                //Al medio segundo se pone el corazon vacio
                 Handler(Looper.getMainLooper()).postDelayed({
                     bind.cora5.setImageResource(R.drawable.cora_vacio)
 
@@ -116,8 +138,10 @@ class Juego : AppCompatActivity() {
             }
 
             4 -> {
+                //...
                 bind.cora4.setImageResource(R.drawable.cora_animacion)
 
+                //...
                 Handler(Looper.getMainLooper()).postDelayed({
                     bind.cora4.setImageResource(R.drawable.cora_vacio)
 
@@ -153,26 +177,36 @@ class Juego : AppCompatActivity() {
             }
         }
 
+        //Le bajo una vida
         vidas--
 
+        //Compruebo el numero de vidas
         if (vidas == 0) {
+            //Muestro mensajes de derrota
             bind.card.visibility = View.VISIBLE
             bind.restart.visibility = View.VISIBLE
+            //Paro el cronometro
             bind.chronometer.stop()
-            sonidogracioso = MediaPlayer.create(this,R.raw.sonidogracioso)
+            //Inicio la musica
+            sonidogracioso = MediaPlayer.create(this, R.raw.sonidogracioso)
             sonidogracioso!!.start()
         }
     }
 
+    //Funcion para comparar dos cartas
     private fun comprobarPareja(i1: ImageView, i2: ImageView): Boolean {
 
+        //Convierto los ImageView a Drawable
         val d1 = i1.drawable
         val d2 = i2.drawable
 
+        //Creo un mapa de bit para cada Drawable
         val bitmap1 =
             Bitmap.createBitmap(d1.intrinsicWidth, d1.intrinsicHeight, Bitmap.Config.ARGB_8888)
         val bitmap2 =
             Bitmap.createBitmap(d2.intrinsicWidth, d2.intrinsicHeight, Bitmap.Config.ARGB_8888)
+
+        //Creo dos canvas para el diseño
         val canvas1 = Canvas(bitmap1)
         val canvas2 = Canvas(bitmap2)
 
@@ -182,20 +216,24 @@ class Juego : AppCompatActivity() {
         d1.draw(canvas1)
         d2.draw(canvas2)
 
+        //Comparara las dos imagenes visualmente
         return bitmap1.sameAs(bitmap2)
 
     }
 
+    //Funcion para mostrar la carta
     private fun mostrar(i: ImageView?, r: Int) {
         i?.setImageResource(cartas[r])
         volteada[r] = true
     }
 
+    //Funcion para ocultar la carta
     private fun ocultar(i: ImageView?, r: Int) {
         i?.setImageResource(R.drawable.trasera)
         volteada[r] = false
     }
 
+    //Funcion para comprobar que ya se han encontrado todas las parejas
     private fun comprobarFin() {
         contadorparejas++
         if (contadorparejas == 6) {
@@ -203,16 +241,21 @@ class Juego : AppCompatActivity() {
 
             bind.card.visibility = View.VISIBLE
             bind.restart.visibility = View.VISIBLE
+
             bind.chronometer.stop()
             val tiempo = bind.chronometer.text.toString()
+
             bind.textView.text = getString(R.string.victoria) + "\n" + tiempo
+
             musicaR?.stop()
             musicaR?.release()
-            musicaChampion = MediaPlayer.create(this,R.raw.campeon)
+
+            musicaChampion = MediaPlayer.create(this, R.raw.campeon)
             musicaChampion!!.start()
         }
     }
 
+    //Funcion para cada vez que se pincha una carta
     fun click(view: View) {
 
         if (vidas > 0 && !terminado) {
