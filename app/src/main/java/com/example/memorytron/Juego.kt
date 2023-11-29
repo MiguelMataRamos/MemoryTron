@@ -56,6 +56,7 @@ class Juego : AppCompatActivity() {
         bind = ActivityJuegoBinding.inflate(layoutInflater)
         setContentView(bind.root)
 
+
         oculto = intent.getBooleanExtra("oculto", false)
         //Si ha activado el modo secreto
         if (oculto) {
@@ -126,6 +127,24 @@ class Juego : AppCompatActivity() {
 
 
     }
+
+    //Override para cuando estas en segundo plano
+    override fun onStop() {
+        musicaR?.pause()
+        musicaChampion?.pause()
+        sonidogracioso?.pause()
+        super.onStop()
+    }
+
+    //Override para cuando vuelves a la app
+    override fun onResume() {
+        if (oculto){
+            musicaR?.start()
+        }
+        super.onResume()
+    }
+
+
 
     //Override para cuando retrocedes
     override fun onBackPressed() {
