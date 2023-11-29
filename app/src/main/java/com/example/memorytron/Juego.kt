@@ -17,20 +17,29 @@ import kotlinx.coroutines.sync.Semaphore
 
 
 class Juego : AppCompatActivity() {
+    private var musicaR: MediaPlayer? = null
+    private var musicaChampion: MediaPlayer? = null
+    private var sonidogracioso: MediaPlayer? = null
+
     private lateinit var bind: ActivityJuegoBinding
+
     private lateinit var cartas: MutableList<Int>
     private var volteada = MutableList(12) { false }
+
+    private var terminado = false
     private var primero = true
     private var vidas = 5
+    private var contadorparejas = 0
+
     private var carta1: Drawable? = null
     private var carta2: Drawable? = null
     private var vista1: ImageView? = null
     private var vista2: ImageView? = null
     private var indice1: Int = -1
     private var indice2: Int = -1
+
     private var semaphore = Semaphore(1)
-    private var terminado = false
-    private var contadorparejas = 0
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -53,7 +62,7 @@ class Juego : AppCompatActivity() {
                 R.drawable.ruso6
             )
 
-            val musicaR: MediaPlayer? = MediaPlayer.create(this, R.raw.tripaloski)
+            musicaR = MediaPlayer.create(this, R.raw.tripaloski)
             musicaR?.start()
 
             bind.juego.setBackgroundResource(R.drawable.tripaloski)
@@ -83,8 +92,13 @@ class Juego : AppCompatActivity() {
         bind.chronometer.start()
 
         bind.restart.setOnClickListener {
+            musicaChampion?.stop()
+            musicaChampion?.release()
+            sonidogracioso?.stop()
+            sonidogracioso?.release()
             recreate()
         }
+
 
     }
 
@@ -145,6 +159,8 @@ class Juego : AppCompatActivity() {
             bind.card.visibility = View.VISIBLE
             bind.restart.visibility = View.VISIBLE
             bind.chronometer.stop()
+            sonidogracioso = MediaPlayer.create(this,R.raw.sonidogracioso)
+            sonidogracioso!!.start()
         }
     }
 
@@ -190,6 +206,10 @@ class Juego : AppCompatActivity() {
             bind.chronometer.stop()
             val tiempo = bind.chronometer.text.toString()
             bind.textView.text = getString(R.string.victoria) + "\n" + tiempo
+            musicaR?.stop()
+            musicaR?.release()
+            musicaChampion = MediaPlayer.create(this,R.raw.campeon)
+            musicaChampion!!.start()
         }
     }
 
